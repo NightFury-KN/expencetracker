@@ -1,3 +1,4 @@
+import 'package:expencetracker/widgets/buildFilterButton.dart';
 import 'package:flutter/material.dart';
 
 
@@ -6,12 +7,15 @@ double fontsize = 13;
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
 
+
   @override
   State<Homescreen> createState() => _HomescreenState();
 }
+String selectedFilter = "Today";
 class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(19, 19, 19, 1),
@@ -44,58 +48,45 @@ class _HomescreenState extends State<Homescreen> {
                   
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: ElevatedButton(
-                          onPressed: null,
-                        
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.black),
-                             textStyle: MaterialStateProperty.all(TextStyle(fontSize: fontsize)),
-                             foregroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 154, 178, 179))
-                          ),
-                          child: const Text("Today"),
-                        ),
+                      FilterButtons(label: "Today", 
+                      selectedFilter: selectedFilter, 
+                      onTap: (){
+                        setState(() {
+                          selectedFilter = "Today";
+                        });
+                        print("Clicked button: " + selectedFilter);
+                      }, 
+                      fontsize: fontsize
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: ElevatedButton(
-                          onPressed: null,
-                      
-                          style: ButtonStyle(
-                            
-                            backgroundColor: MaterialStateProperty.all(Colors.black),
-                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: fontsize)),
-                             foregroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 154, 178, 179))
-                          ),
-                          child: const Text("This Week"),
-                        ),
+                     FilterButtons(label: "This Week", 
+                      selectedFilter: selectedFilter, 
+                      onTap: (){
+                        setState(() {
+                          selectedFilter = "This Week";
+                        });
+                        print("Clicked button: " + selectedFilter);
+                      }, 
+                      fontsize: fontsize
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: ElevatedButton(
-                          onPressed: null,
-                        
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.black),
-                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: fontsize)),
-                             foregroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 154, 178, 179))
-                          ),
-                          child: const Text("This Month"),
-                        ),
+                     FilterButtons(label: "This Month", 
+                      selectedFilter: selectedFilter, 
+                      onTap: (){
+                        setState(() {
+                          selectedFilter = "This Month";
+                        });
+                        print("Clicked button: " + selectedFilter);
+                      }, 
+                      fontsize: fontsize
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right:5),
-                        child: ElevatedButton(
-                          onPressed: null,
-                        
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.black),
-                            textStyle: MaterialStateProperty.all(TextStyle(fontSize:fontsize )),
-                             foregroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 154, 178, 179))
-                          ),
-                          child: const Text("Calender"),
-                        ),
+                      FilterButtons(label: "Calender", 
+                      selectedFilter: selectedFilter, 
+                      onTap: (){
+                        setState(() {
+                          selectedFilter = "Calender";
+                        });
+                        print("Clicked button: " + selectedFilter);
+                      }, 
+                      fontsize: fontsize
                       ),
                     ],
                   ),
