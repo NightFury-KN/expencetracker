@@ -2,7 +2,7 @@ import 'package:expencetracker/widgets/buildFilterButton.dart';
 import 'package:flutter/material.dart';
 
 
-double fontsize = 13;
+double fontsize = 12;
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
