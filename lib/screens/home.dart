@@ -16,6 +16,7 @@ class Homescreen extends StatefulWidget {
 
 String selectedFilter = "Today";
 
+
 class _HomescreenState extends State<Homescreen> {
   List<Expence> allExpenses = [
     Expence(
@@ -44,7 +45,14 @@ class _HomescreenState extends State<Homescreen> {
       date: DateTime.now().subtract(Duration(days: 10)),
       category: Cat.entertainment,
     ),
+    
   ];
+
+  void _addExpense(Expence expense){
+  setState((){
+    allExpenses.add(expense);
+  });
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +71,7 @@ class _HomescreenState extends State<Homescreen> {
             IconButton(
               onPressed:
                   () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Newexpence()),
+                    MaterialPageRoute(builder: (context) => Newexpence(onAddExpense: _addExpense)),
                   ),
               icon: const Icon(Icons.add),
             ),

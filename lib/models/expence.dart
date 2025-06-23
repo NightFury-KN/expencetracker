@@ -31,4 +31,8 @@ class Expence {
 
     }
   ): id = generateSimpleId();
+
+  static void add(Expence expence) {
+    
+  }
 }
